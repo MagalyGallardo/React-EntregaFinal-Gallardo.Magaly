@@ -9,6 +9,26 @@
     list-style: none;
   }
 
-.link-carrito {
-    text-decoration: none;
+.fondo{
+    background: rgb(232,193,227);
+    background: linear-gradient(90deg, rgba(232,193,227,0.9364788151588761) 0%, rgba(223,196,145,1) 100%);
 }
+.boton{
+    background-color: #ffcccc; /* Cambia este color al color pastel que prefieras */
+    border: none;
+    color: #fff; 
+    font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.boton:hover {
+    background-color: #9cbede; 
+    color: #f1f1f1; 
+  }

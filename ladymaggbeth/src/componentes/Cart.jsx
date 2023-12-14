@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import { CartContext } from '../context/CartContext';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
-
+import Swal from "sweetalert2";
 
 const clearBuyer = {name: '', phone: '', email: ''}
 export const Cart = () => {
@@ -18,7 +18,11 @@ const handleSendOrder = () => {
   const orderCollection = collection (db, "orders");
   addDoc (orderCollection, order).then (({id}) =>{
     if (id ) {
-        alert ("su orden : " + id + " ha sido completada");
+        Swal.fire({
+            title: "Genial!",
+            text: "Su orden ha sido completada",
+            icon: "success"
+          });
     }
   }).finally (() => {
     setBuyer (clearBuyer);
@@ -40,8 +44,6 @@ const handleChange = (ev) => {
     
     return (
         <Container>
-            <button onClick={clear}>Vaciar Carrito</button>
-            <mark>{total}</mark>
             <div className='d-flex'>
                 {items.map((item) => (
                     <div key={item.id}> 
@@ -49,8 +51,8 @@ const handleChange = (ev) => {
                         <h2>Precio: {item.precio}</h2>
                         <h3>Cantidad: {item.quantity}</h3>
                         <p>{item.descripcion}</p>
-                        <img src={item.imagen} />
-                        <div onClick={() => removeItem (item.id)}>X</div>
+                        <img src={item.img} width={200}/>
+                        <div className='boton' onClick={() => removeItem (item.id)}>X</div>
                     </div>
                 ))}
             </div>
@@ -82,7 +84,13 @@ const handleChange = (ev) => {
                         required
                         name='email'/>
                 </div>
-                <button type='button' onClick={handleSendOrder}>Comprar</button>
+                <div>${total}</div>
+                <div>
+                    <button className='boton' type='button' onClick={handleSendOrder}>Comprame!</button>
+                    <span>
+                    <button className='boton' onClick={clear}>Vaciar Carrito</button>
+                </span>
+                </div>
             </form>
         </Container>
     );

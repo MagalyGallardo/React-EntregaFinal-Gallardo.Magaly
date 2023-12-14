@@ -27,7 +27,7 @@ export const ItemCounter = ({initial, stock, onAdd}) => {
             </div>
         </div>
         <br />
-        <button onClick={handleAdd}>Agregar al carrito</button>
+        <button className="boton" onClick={handleAdd}>Agregar al carrito</button>
         </>
     )
 }

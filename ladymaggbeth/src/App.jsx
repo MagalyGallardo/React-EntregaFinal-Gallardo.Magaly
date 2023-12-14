@@ -5,11 +5,12 @@ import { ItemListContainer } from "./componentes/ItemListContainer";
 import { ItemDetailContainer } from "./componentes/ItemDetailContainer";
 import { CartProvider } from "./context/CartContext";
 import { Cart } from "./componentes/Cart";
-import "./App.css";
+import "../src/App.css";
 
 
 function App() {
   return (
+    <div className="fondo">
   <CartProvider>
     <BrowserRouter>
     <NavBar/>
@@ -22,6 +23,7 @@ function App() {
       </Routes>
     </BrowserRouter>
   </CartProvider>
+  </div>
   );
 }
 

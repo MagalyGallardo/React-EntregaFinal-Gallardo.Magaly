@@ -16,7 +16,7 @@ export const NavBar = () => {
             <Nav.Link as={NavLink} key="bolsas" to={"/categoria/Bolsas"}>Bolsas</Nav.Link>
             <Nav.Link as={NavLink} key="coasters" to={"/categoria/Coasters"}>Coasters</Nav.Link>
           </Nav>
-          <CartWidget />
+          <CartWidget/>
         </Container>
       </Navbar>
     );

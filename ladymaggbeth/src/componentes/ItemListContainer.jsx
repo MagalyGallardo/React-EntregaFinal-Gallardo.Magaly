@@ -16,7 +16,7 @@ export const ItemListContainer = () => {
         const refCollection = id 
         ? query (
             collection(db, "items"),
-            where ("categoryId", "==", id)
+            where ("categoria", "==", id)
         )
         : collection (db, "items"); 
     

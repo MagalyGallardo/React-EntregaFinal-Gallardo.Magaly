@@ -10,9 +10,9 @@ export const CartWidget = () => {
         (acumulador, actual) => acumulador + actual.quantity, 0)
     
     return ( 
-    <Link to= "/cart"> 
+    <Link to= "/cart" className='link-carrito'> 
     <img src={cart}alt="carrito" width="40"/> 
-    <span>{total}</span>
+    <span className= "texto-personalizado">{total}</span>
     </Link>
     );
 }

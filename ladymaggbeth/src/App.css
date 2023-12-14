@@ -1,4 +1,14 @@
-.container >span{
-    color: rgb(133, 103, 68);
-    padding-left: 0.5rem;
+
+.navbarContainer {
+    background-color: rgb(255, 255, 174);
+}
+
+.texto-personalizado {
+    color: black;
+    font-weight: bold;
+    list-style: none;
+  }
+
+.link-carrito {
+    text-decoration: none;
 }
